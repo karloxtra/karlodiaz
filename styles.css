@@ -8,7 +8,7 @@
   --grey-700:#cfcfcf;
   --grey-400:#9a9a9a;
   --grey-200:#2a2a2a;
-  --white:#0b0b0c;
+  --white:#111111;
 
   --gutter: clamp(2px, 0.4vw, 6px);
   --edge: clamp(20px, 4vw, 56px);
