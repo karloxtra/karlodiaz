@@ -187,14 +187,23 @@ const PROJECTS = {
   }
 
   items.forEach((el) => {
-    el.addEventListener("click", () => openModal(el.dataset.project));
-    el.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openModal(el.dataset.project);
-      }
-    });
+  function openProject() {
+    const project = PROJECTS[el.dataset.project];
+
+    if (project && project.youtube) {
+      window.open(project.youtube, "_blank");
+    }
+  }
+
+  el.addEventListener("click", openProject);
+
+  el.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openProject();
+    }
   });
+});
 
   modalClose.addEventListener("click", closeModal);
   modalScrim.addEventListener("click", closeModal);
