@@ -293,12 +293,16 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 
 .contact-logo{
   position:absolute;
-  width:min(72vw, 920px);
-  max-height:78vh;
+  top:50%;
+  left:50%;
+  width:min(78vw, 900px);
+  max-height:70vh;
   object-fit:contain;
+
+  transform:translate(-50%,-50%) scale(.85);
   opacity:0;
-  transform:scale(.82);
-  filter:drop-shadow(0 0 50px rgba(255,255,255,.05));
+
+  mix-blend-mode:screen;
   pointer-events:none;
   z-index:0;
 }
@@ -393,16 +397,16 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 @keyframes contact-logo-in{
   from{
     opacity:0;
-    transform:scale(.82);
-    filter:blur(14px) drop-shadow(0 0 50px rgba(255,255,255,.05));
+    transform:translate(-50%,-50%) scale(.85);
+    filter:blur(12px);
   }
+
   to{
     opacity:.12;
-    transform:scale(1);
-    filter:blur(0) drop-shadow(0 0 50px rgba(255,255,255,.05));
+    transform:translate(-50%,-50%) scale(1);
+    filter:blur(0);
   }
 }
-
 @keyframes contact-copy-in{
   from{
     opacity:0;
@@ -437,13 +441,15 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 }
 
 @media (max-width:640px){
+
   .contact-scene{
     padding:110px 20px 90px;
   }
 
   .contact-logo{
-    width:110vw;
-    opacity:0;
+    width:95vw;
+    max-height:50vh;
+    top:48%;
   }
 
   .contact-title{
@@ -459,6 +465,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     bottom:26px;
     gap:20px;
   }
+
 }
 
 @media (prefers-reduced-motion:reduce){
