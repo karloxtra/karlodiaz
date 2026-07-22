@@ -131,7 +131,18 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   color:var(--black);
   transition:transform var(--dur-fast) var(--ease);
 }
-.brand:hover .logo{ transform:rotate(90deg); }
+
+.logo img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  display:block;
+}
+
+.brand:hover .logo{
+  opacity:.8;
+}
+
 .byline{
   font-size:11px;
   letter-spacing:0.14em;
@@ -139,7 +150,6 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   color:var(--grey-700);
   white-space:nowrap;
 }
-
 /* ============ Views ============ */
 .view{
   display:none;
