@@ -625,3 +625,29 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .project-item:focus-visible .project-media img {
   transform: scale(1.045);
 }
+/* ===== INTRO VIDEO ===== */
+
+#intro{
+    position:fixed;
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+
+    transition:opacity 1s ease;
+}
+
+#intro.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+#intro video{
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
