@@ -238,18 +238,28 @@ const PROJECTS = {
   window.addEventListener("load", () => {
     document.body.classList.add("is-ready");
   });
-})();
 const intro = document.getElementById("intro");
 const introVideo = document.getElementById("intro-video");
+const introAlreadyPlayed = sessionStorage.getItem("introPlayed");
 
-introVideo.onended = () => {
+function removeIntro() {
+  if (!intro) return;
 
-    intro.classList.add("hide");
+  intro.classList.add("hide");
 
-    setTimeout(() => {
+  setTimeout(() => {
+    intro.remove();
+  }, 1000);
+}
 
-        intro.remove();
+if (intro && introVideo) {
+  if (introAlreadyPlayed) {
+    intro.remove();
+  } else {
+    sessionStorage.setItem("introPlayed", "true");
 
-    },1000);
-
-};
+    introVideo.addEventListener("ended", removeIntro);
+    introVideo.addEventListener("error", removeIntro);
+  }
+}
+})();
