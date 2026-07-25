@@ -240,23 +240,32 @@ const PROJECTS = {
   });
 const intro = document.getElementById("intro");
 const introVideo = document.getElementById("intro-video");
-const introAlreadyPlayed = sessionStorage.getItem("introPlayed");
-
-function removeIntro() {
-  if (!intro) return;
-
-  intro.classList.add("hide");
-
-  setTimeout(() => {
-    intro.remove();
-  }, 1000);
-}
 
 if (intro && introVideo) {
+
+  // Choose the correct intro based on screen size
+  if (window.innerWidth <= 768) {
+    introVideo.src = "LOGOINTROPHONE.mp4";
+  } else {
+    introVideo.src = "LOGOINTROMP4.mp4";
+  }
+
+  const introAlreadyPlayed = sessionStorage.getItem("introPlayed");
+
+  function removeIntro() {
+    intro.classList.add("hide");
+
+    setTimeout(() => {
+      intro.remove();
+    }, 1000);
+  }
+
   if (introAlreadyPlayed) {
     intro.remove();
   } else {
     sessionStorage.setItem("introPlayed", "true");
+
+    introVideo.play();
 
     introVideo.addEventListener("ended", removeIntro);
     introVideo.addEventListener("error", removeIntro);
