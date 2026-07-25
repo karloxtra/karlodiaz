@@ -239,3 +239,17 @@ const PROJECTS = {
     document.body.classList.add("is-ready");
   });
 })();
+const intro = document.getElementById("intro");
+const introVideo = document.getElementById("intro-video");
+
+introVideo.onended = () => {
+
+    intro.classList.add("hide");
+
+    setTimeout(() => {
+
+        intro.remove();
+
+    },1000);
+
+};
