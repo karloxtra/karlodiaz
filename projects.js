@@ -1,27 +1,27 @@
-const PROJECTS = [
+window.PROJECTS = [
   {
-    slug: "dogs-n-da-dark",
-    title: "Dogs n da Dark",
-    artist: "Killcrawdad",
+    id: "dogs-n-da-dark",
+    title: "DOGS N DA DARK",
+    artist: "KILLCRAWDAD",
     year: "2026",
-    roles: ["Director", "Editor"],
-    shotOn: ["Canon EOS T5i", "DJI RS gimbal stabilizer", "Canon EF-S 10–18mm f/4.5–5.6 IS STM"],
-    software: ["Adobe Premiere Pro", "Adobe After Effects"],
+    roles: ["DIRECTOR", "EDITOR"],
+    camera: ["CANON EOS T5I", "DJI RS GIMBAL STABILIZER", "EF-S 10-18MM F/4.5-5.6 IS STM"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS"],
     youtube: "https://www.youtube.com/watch?v=DJWonNOyXIo",
     images: [
-      "projects/dogs-n-da-dark/dogsndadark1.png",
-      "projects/dogs-n-da-dark/dogsndadark2.png",
-      "projects/dogs-n-da-dark/dogsndadark3.png"
+      "projects/dogsndadark/dogsndadark1.png",
+      "projects/dogsndadark/dogsndadark2.png",
+      "projects/dogsndadark/dogsndadark3.png"
     ]
   },
   {
-    slug: "mirame",
-    title: "Mirame",
-    artist: "NBR Jay",
+    id: "mirame",
+    title: "MIRAME",
+    artist: "NBR JAY",
     year: "2025",
-    roles: ["Director", "Editor"],
-    shotOn: ["iPhone"],
-    software: ["Adobe Premiere Pro", "Adobe After Effects"],
+    roles: ["DIRECTOR", "EDITOR"],
+    camera: ["SHOT ON IPHONE"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS"],
     youtube: "https://www.youtube.com/watch?v=4OJuUxjGiz8",
     images: [
       "projects/mirame/mirame1.png",
@@ -30,28 +30,28 @@ const PROJECTS = [
     ]
   },
   {
-    slug: "en-cuatro",
-    title: "En Cuatro",
-    artist: "NBR Jay",
+    id: "en-cuatro",
+    title: "EN CUATRO",
+    artist: "NBR JAY",
     year: "2024",
-    roles: ["Director", "Editor", "3D Artist"],
-    shotOn: ["iPhone"],
-    software: ["Adobe Premiere Pro", "Adobe After Effects", "Blender"],
+    roles: ["DIRECTOR", "EDITOR", "3D ARTIST"],
+    camera: ["SHOT ON IPHONE"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS", "BLENDER"],
     youtube: "https://www.youtube.com/watch?v=d_1qusjhRV4",
     images: [
-      "projects/en-cuatro/encuatro1.png",
-      "projects/en-cuatro/encuatro2.png",
-      "projects/en-cuatro/encuatro3.png"
+      "projects/en cuatro/encuatro1.png",
+      "projects/en cuatro/encuatro2.png",
+      "projects/en cuatro/encuatro3.png"
     ]
   },
   {
-    slug: "forever",
-    title: "Forever",
-    artist: "NBR Jay",
+    id: "forever",
+    title: "FOREVER",
+    artist: "NBR JAY",
     year: "2023",
-    roles: ["Director", "Editor"],
-    shotOn: ["iPhone"],
-    software: ["Adobe Premiere Pro", "Adobe After Effects"],
+    roles: ["DIRECTOR", "EDITOR"],
+    camera: ["SHOT ON IPHONE"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS"],
     youtube: "https://www.youtube.com/watch?v=9PEszrjHp9M",
     images: [
       "projects/forever/forever1.png",
@@ -60,13 +60,13 @@ const PROJECTS = [
     ]
   },
   {
-    slug: "g33k3d",
+    id: "g33k3d",
     title: "G33K3D",
-    artist: "NBR Jay",
+    artist: "NBR JAY",
     year: "2023",
-    roles: ["Director", "Editor", "3D Artist"],
-    shotOn: ["iPhone"],
-    software: ["Adobe Premiere Pro", "Adobe After Effects", "Cinema 4D"],
+    roles: ["DIRECTOR", "EDITOR", "3D ARTIST"],
+    camera: ["SHOT ON IPHONE"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS", "CINEMA 4D"],
     youtube: "https://www.youtube.com/watch?v=-p-pYviFdD0",
     images: [
       "projects/g33k3d/g33k3d1.png",
@@ -75,33 +75,33 @@ const PROJECTS = [
     ]
   },
   {
-    slug: "n3w-jurr",
+    id: "n3w-jurr",
     title: "N3W JÜRR",
-    artist: "NBR Jay",
+    artist: "NBR JAY",
     year: "2023",
-    roles: ["Director", "Editor"],
-    shotOn: ["iPhone"],
-    software: ["Adobe Premiere Pro", "Adobe After Effects"],
+    roles: ["DIRECTOR", "EDITOR"],
+    camera: ["SHOT ON IPHONE"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS"],
     youtube: "https://www.youtube.com/watch?v=s_fuOBWAAmQ",
     images: [
-      "projects/n3w-jurr/n3wjurr1.png",
-      "projects/n3w-jurr/n3wjurr2.png",
-      "projects/n3w-jurr/n3wjurr3.png"
+      "projects/n3wjurr/n3wjurr1.png",
+      "projects/n3wjurr/n3wjurr2.png",
+      "projects/n3wjurr/n3wjurr3.png"
     ]
   },
   {
-    slug: "nauseous",
+    id: "nauseous",
     title: "NAUSEOUS",
-    artist: "NBR Jay",
+    artist: "NBR JAY",
     year: "2023",
-    roles: ["Director", "Editor", "3D Artist"],
-    shotOn: ["iPhone"],
-    software: ["Adobe Premiere Pro", "Adobe After Effects", "Blender"],
+    roles: ["DIRECTOR", "EDITOR", "3D ARTIST"],
+    camera: ["SHOT ON IPHONE"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS", "BLENDER"],
     youtube: "https://www.youtube.com/watch?v=7FOKe1UMYBk",
     images: [
-      "projects/nauseous/nauseous1.png",
-      "projects/nauseous/nauseous2.png",
-      "projects/nauseous/nauseous3.png"
+      "projects/nauseuous/nauseous1.png",
+      "projects/nauseuous/nauseous2.png",
+      "projects/nauseuous/nauseous3.png"
     ]
   }
 ];

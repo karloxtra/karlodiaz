@@ -3,32 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A film project by Karlo Diaz.">
-  <title>Project — Karlo Diaz</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap">
+  <meta name="description" content="A project by Karlo Diaz.">
+  <title>PROJECT — KARLO DIAZ</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="project-page">
-  <div class="page-transition is-covering" aria-hidden="true">
-    <p class="page-transition-title"></p>
-  </div>
-
   <header class="site-header project-header">
-    <a class="identity" href="index.html#about" aria-label="Karlo Diaz, home">
-      <span>Karlo Diaz</span>
-      <img src="xtralogo.png" alt="XTRA logo">
+    <a class="brand-link" href="index.html#works" aria-label="Back to works">
+      <img src="xtralogo.png" alt="XTRA">
     </a>
-    <nav aria-label="Primary navigation">
-      <a href="index.html#about" class="nav-link">About</a>
-      <a href="index.html#works" class="nav-link">Works</a>
-      <a href="index.html#contact" class="nav-link">Contact</a>
+    <nav class="main-nav" aria-label="Project navigation">
+      <a class="nav-link" href="index.html#about">ABOUT</a>
+      <a class="nav-link is-active" href="index.html#works">WORKS</a>
+      <a class="nav-link" href="index.html#contact">CONTACT</a>
     </nav>
   </header>
 
-  <main id="project-root"></main>
+  <main id="project-root" class="project-root"></main>
+  <div class="page-transition" aria-hidden="true"><span></span></div>
 
   <script src="projects.js"></script>
-  <script src="project.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -3,64 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Karlo Diaz — director, editor and 3D artist.">
-  <title>Karlo Diaz — Director & Editor</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap">
+  <meta name="description" content="Karlo Diaz — director, editor, and 3D artist.">
+  <title>KARLO DIAZ</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home-page">
   <div id="intro" class="intro" aria-hidden="true">
     <video id="intro-video" muted playsinline preload="auto"></video>
   </div>
 
-  <div class="page-transition" aria-hidden="true">
-    <p class="page-transition-title"></p>
-  </div>
-
   <header class="site-header">
-    <a class="identity" href="#about" aria-label="Karlo Diaz, home">
-      <span>Karlo Diaz</span>
-      <img src="xtralogo.png" alt="XTRA logo">
-    </a>
-    <nav aria-label="Primary navigation">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#works" class="nav-link">Works</a>
-      <a href="#contact" class="nav-link">Contact</a>
+    <button class="brand-link" data-section="about" type="button" aria-label="Go to About">
+      <img src="xtralogo.png" alt="XTRA">
+    </button>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <button class="nav-link is-active" data-section="about" type="button">ABOUT</button>
+      <button class="nav-link" data-section="works" type="button">WORKS</button>
+      <button class="nav-link" data-section="contact" type="button">CONTACT</button>
     </nav>
   </header>
 
   <main>
-    <section id="about" class="hero section">
-      <div class="hero-kicker reveal">Director · Editor · 3D Artist</div>
-      <h1 class="hero-name reveal">Karlo<br>Diaz</h1>
-      <div class="hero-bottom reveal">
-        <p>Studying Digital and Media Arts with a minor in Video & Film Production at CSUSM.</p>
-        <a href="#works" class="text-link">View selected work <span>↓</span></a>
+    <section id="about" class="page-section about-section is-active" aria-labelledby="about-name">
+      <div class="about-lockup">
+        <h1 id="about-name">KARLO DIAZ</h1>
+        <p>DIRECTOR · EDITOR · 3D ARTIST</p>
+        <p class="education">DIGITAL AND MEDIA ARTS MAJOR<br>MINOR IN VIDEO &amp; FILM PRODUCTION<br>CALIFORNIA STATE UNIVERSITY SAN MARCOS</p>
       </div>
+      <button class="scroll-cue" data-section="works" type="button">SELECTED WORK ↓</button>
     </section>
 
-    <section id="works" class="works section">
-      <div class="section-heading reveal">
-        <p>Selected work</p>
-        <p>2023—2026</p>
+    <section id="works" class="page-section works-section" aria-labelledby="works-title">
+      <div class="section-heading">
+        <h2 id="works-title">SELECTED WORK</h2>
+        <span>2023—2026</span>
       </div>
-      <div id="project-list" class="project-list"></div>
+      <div id="projects-grid" class="projects-grid"></div>
     </section>
 
-    <section id="contact" class="contact section">
-      <img class="contact-logo" src="xtralogo.png" alt="" aria-hidden="true">
-      <div class="contact-inner reveal">
-        <p class="contact-label">Contact</p>
-        <h2>Ready when<br>you are.</h2>
-        <a class="contact-email" href="mailto:karloxtra@gmail.com">karloxtra@gmail.com</a>
-      </div>
-      <div class="contact-links reveal">
-        <a href="https://www.instagram.com/xtrazaid/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.linkedin.com/in/karlo-diaz-78ba50371/" target="_blank" rel="noopener">LinkedIn</a>
+    <section id="contact" class="page-section contact-section" aria-labelledby="contact-title">
+      <img class="contact-mark" src="xtralogo.png" alt="" aria-hidden="true">
+      <div class="contact-inner">
+        <p class="contact-kicker">AVAILABLE FOR SELECT PROJECTS</p>
+        <h2 id="contact-title">READY WHEN<br>YOU ARE.</h2>
+        <a class="contact-email" href="mailto:karloxtra@gmail.com">KARLOXTRA@GMAIL.COM</a>
+        <div class="contact-links">
+          <a href="https://www.instagram.com/xtrazaid/" target="_blank" rel="noopener">INSTAGRAM</a>
+          <a href="https://www.linkedin.com/in/karlo-diaz-78ba50371/" target="_blank" rel="noopener">LINKEDIN</a>
+        </div>
       </div>
     </section>
   </main>
+
+  <div class="page-transition" aria-hidden="true"><span></span></div>
 
   <script src="projects.js"></script>
   <script src="script.js"></script>
