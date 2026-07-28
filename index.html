@@ -1,191 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karlo Diaz — Portfolio</title>
-<meta name="description" content="Selected work by Karlo Diaz.">
-
-<!-- Typeface: General Sans (Fontshare) — clean, modern grotesk -->
-<link rel="preconnect" href="https://api.fontshare.com">
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap">
-
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Karlo Diaz — director, editor and 3D artist.">
+  <title>Karlo Diaz — Director & Editor</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="intro">
-    <video
-        id="intro-video"
-        autoplay
-        muted
-        playsinline
-    ></video>
-</div>
-<!-- Custom cursor (desktop only, see script.js) -->
-<div class="cursor" id="cursor">
-  <span class="cursor-label">View</span>
-</div>
-
-<!-- ============ HEADER ============ -->
-<header class="site-header">
-  <nav class="nav-left" aria-label="Primary">
-    <button class="nav-link is-active" data-view="home" type="button">Work</button>
-    <button class="nav-link" data-view="contact" type="button">Contact</button>
-  </nav>
-
-  <a class="brand" href="#" data-view="home" aria-label="Karlo Diaz — home">
-    <!-- Simple original wordmark logo. Replace the <svg> below with your own mark if you like. -->
-<span class="logo">
-  <img src="xtralogo.png" alt="XTRA Logo">
-</span>
-    <span class="byline">By Karlo&nbsp;Diaz</span>
-  </a>
-</header>
-
-<!-- ============ HOME / GALLERY ============ -->
-<main id="home-view" class="view is-active">
-  <section class="gallery" id="gallery" aria-label="Selected work">
-    <!-- Each .project-item is a placeholder. Replace the .placeholder-img div
-         with a real <img src="images/your-image.jpg" alt="..."> when ready. -->
-
-    <article class="project-item span-a" data-project="dogs-n-da-dark" tabindex="0">
- <div class="project-media">
-  <img src="https://img.youtube.com/vi/DJWonNOyXIo/maxresdefault.jpg"
-       alt="Dogs n da dark - Killcrawdad">
-  <div class="project-caption">
-    <span class="project-title">Dogs n da dark - Killcrawdad</span>
-    <span class="project-meta">Music Video · 2026</span>
+  <div id="intro" class="intro" aria-hidden="true">
+    <video id="intro-video" muted playsinline preload="auto"></video>
   </div>
-</article>
 
-<article class="project-item span-b" data-project="mirame" tabindex="0">
-<div class="project-media">
-  <img src="https://img.youtube.com/vi/4OJuUxjGiz8/maxresdefault.jpg"
-       alt="NBR Jay - Mirame">
-  <div class="project-caption">
-    <span class="project-title">NBR Jay - Mirame</span>
-    <span class="project-meta">Music Video · 2025</span>
+  <div class="page-transition" aria-hidden="true">
+    <p class="page-transition-title"></p>
   </div>
-</article>
 
-<article class="project-item span-c" data-project="en-cuatro" tabindex="0">
-<div class="project-media">
-  <img src="https://img.youtube.com/vi/d_1qusjhRV4/maxresdefault.jpg"
-       alt="NBR Jay - En Cuatro">
-</div>
-  <div class="project-caption">
-    <span class="project-title">NBR Jay - En Cuatro</span>
-    <span class="project-meta">Music Video · 2024</span>
-  </div>
-</article>
+  <header class="site-header">
+    <a class="identity" href="#about" aria-label="Karlo Diaz, home">
+      <span>Karlo Diaz</span>
+      <img src="xtralogo.png" alt="XTRA logo">
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#works" class="nav-link">Works</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
 
-<article class="project-item span-d" data-project="forever" tabindex="0">
-<div class="project-media">
-  <img src="https://img.youtube.com/vi/9PEszrjHp9M/maxresdefault.jpg"
-       alt="NBR Jay - Forever">
-  <div class="project-caption">
-    <span class="project-title">NBR Jay - Forever</span>
-    <span class="project-meta">Music Video · 2023</span>
-  </div>
-</article>
+  <main>
+    <section id="about" class="hero section">
+      <div class="hero-kicker reveal">Director · Editor · 3D Artist</div>
+      <h1 class="hero-name reveal">Karlo<br>Diaz</h1>
+      <div class="hero-bottom reveal">
+        <p>Studying Digital and Media Arts with a minor in Video & Film Production at CSUSM.</p>
+        <a href="#works" class="text-link">View selected work <span>↓</span></a>
+      </div>
+    </section>
 
-<article class="project-item span-e" data-project="g33k3d" tabindex="0">
-<div class="project-media">
-  <img src="https://img.youtube.com/vi/-p-pYviFdD0/hqdefault.jpg"
-       alt="NBR Jay - G33K3D">
-  <div class="project-caption">
-    <span class="project-title">NBR Jay - G33K3D</span>
-    <span class="project-meta">Music Video · 2023</span>
-  </div>
-</article>
+    <section id="works" class="works section">
+      <div class="section-heading reveal">
+        <p>Selected work</p>
+        <p>2023—2026</p>
+      </div>
+      <div id="project-list" class="project-list"></div>
+    </section>
 
-<article class="project-item span-f" data-project="n3w-jurr" tabindex="0">
-<div class="project-media">
-  <img src="https://img.youtube.com/vi/s_fuOBWAAmQ/hqdefault.jpg"
-       alt="NBR Jay - N3W JÜRR">
-</div>
-  <div class="project-caption">
-    <span class="project-title">NBR Jay - N3W JÜRR</span>
-    <span class="project-meta">Music Video · 2023</span>
-  </div>
-</article>
+    <section id="contact" class="contact section">
+      <img class="contact-logo" src="xtralogo.png" alt="" aria-hidden="true">
+      <div class="contact-inner reveal">
+        <p class="contact-label">Contact</p>
+        <h2>Ready when<br>you are.</h2>
+        <a class="contact-email" href="mailto:karloxtra@gmail.com">karloxtra@gmail.com</a>
+      </div>
+      <div class="contact-links reveal">
+        <a href="https://www.instagram.com/xtrazaid/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/karlo-diaz-78ba50371/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
 
-<article class="project-item span-g" data-project="nauseous" tabindex="0">
-<div class="project-media">
-  <img src="https://img.youtube.com/vi/7FOKe1UMYBk/maxresdefault.jpg"
-       alt="NBR Jay - NAUSEOUS">
-</div>
-  <div class="project-caption">
-    <span class="project-title">NBR Jay - NAUSEOUS</span>
-    <span class="project-meta">Music Video · 2023</span>
-  </div>
-</article>
-
-  </section>
-
-  <footer class="site-footer">
-    <span>© <span id="year"></span> Karlo Diaz</span>
-    <span>All work shown by permission</span>
-  </footer>
-</main>
-
-<!-- ============ CONTACT ============ -->
-<section id="contact-view" class="view">
-  <div class="contact-scene">
-
-    <img
-      class="contact-logo"
-      src="xtralogo.png"
-      alt=""
-      aria-hidden="true"
-    >
-
-    <div class="contact-content">
-      <h1 class="contact-title">
-        <span>Ready when</span>
-        <span>you are.</span>
-      </h1>
-
-      <a
-        class="contact-email"
-        href="mailto:karloxtra@gmail.com"
-      >
-        karloxtra@gmail.com
-      </a>
-    </div>
-
-    <div class="contact-socials">
-      <a
-        href="https://www.instagram.com/xtrazaid/"
-        target="_blank"
-        rel="noopener"
-      >
-        Instagram
-      </a>
-
-      <a
-        href="https://www.linkedin.com/in/karlo-diaz-78ba50371/"
-        target="_blank"
-        rel="noopener"
-      >
-        LinkedIn
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ PROJECT MODAL ============ -->
-<div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="modal-scrim" id="modal-scrim"></div>
-  <div class="modal-panel">
-    <button class="modal-close" id="modal-close" type="button" aria-label="Close project">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 1L15 15M15 1L1 15" stroke="currentColor" stroke-width="1.3"/></svg>
-    </button>
-    <div class="modal-content" id="modal-content"><!-- injected by script.js --></div>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
