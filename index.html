@@ -35,8 +35,11 @@
 
     <section id="works" class="page-section works-section" aria-labelledby="works-title">
       <div class="section-heading">
-        <h2 id="works-title">SELECTED WORK</h2>
-        <span>2023—2026</span>
+        <div class="work-tabs" role="tablist" aria-label="Work type">
+          <button id="long-form-tab" class="work-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="projects-grid" data-work-view="long">LONG FORM</button>
+          <button id="short-form-tab" class="work-tab" type="button" role="tab" aria-selected="false" aria-controls="projects-grid" data-work-view="short">SHORT FORM</button>
+        </div>
+        <span id="work-years">2023—2026</span>
       </div>
       <div id="projects-grid" class="projects-grid"></div>
     </section>
@@ -54,6 +57,26 @@
       </div>
     </section>
   </main>
+
+  <div id="short-player" class="short-player" aria-hidden="true">
+    <button class="short-player-backdrop" type="button" aria-label="Close video"></button>
+    <div class="short-player-panel" role="dialog" aria-modal="true" aria-labelledby="short-player-title">
+      <button id="short-player-close" class="short-player-close" type="button">CLOSE</button>
+      <div class="short-player-media">
+        <video id="short-player-video" controls playsinline preload="metadata"></video>
+      </div>
+      <div class="short-player-copy">
+        <div>
+          <h3 id="short-player-title"></h3>
+          <p id="short-player-description"></p>
+        </div>
+        <div class="short-player-meta">
+          <span id="short-player-year"></span>
+          <span id="short-player-tools"></span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="page-transition" aria-hidden="true"><span></span></div>
 
