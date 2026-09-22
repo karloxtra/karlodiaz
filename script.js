@@ -235,7 +235,9 @@
 
     document.title = `${project.title} — KARLO DIAZ`;
 
-    const lines = values => values.map(value => `<span class="spec-value">${value}</span>`).join("");
+    const lines = values => (values || []).map(value => `<span class="spec-value">${value}</span>`).join("");
+    const titleMeta = [project.artist, project.year].filter(Boolean).join(" · ");
+    const heroAlt = project.artist ? `${project.artist} — ${project.title}` : project.title;
     const navButton = (item, direction) => item ? `
       <a class="project-nav-button ${direction}" href="project.html?id=${encodeURIComponent(item.id)}" data-project-nav="${item.title}">
         <small>${direction === "previous" ? "← PREVIOUS" : "NEXT →"}</small>
@@ -245,18 +247,26 @@
     root.innerHTML = `
       <section class="project-intro">
         <div class="project-title-group">
+          <p class="project-category">${project.category || (project.artist ? "MUSIC VIDEO" : "PROJECT")}</p>
           <h1>${project.title}</h1>
-          <p>${project.artist} · ${project.year}</p>
+          <p>${titleMeta}</p>
         </div>
         <div class="project-specs">
           <div><span class="spec-label">ROLE</span>${lines(project.roles)}</div>
           <div><span class="spec-label">CAMERA / GEAR</span>${lines(project.camera)}</div>
           <div><span class="spec-label">TOOLS</span>${lines(project.software)}</div>
+          ${project.starring ? `<div><span class="spec-label">STARRING</span>${lines(project.starring)}</div>` : ""}
+          ${project.format ? `<div><span class="spec-label">FORMAT</span>${lines(project.format)}</div>` : ""}
         </div>
       </section>
-      <div class="project-hero"><img src="${project.images[0]}" alt="${project.title} still 1"></div>
+      ${project.description ? `
+      <section class="project-description reveal">
+        <span class="spec-label">SYNOPSIS</span>
+        <p>${project.description}</p>
+      </section>` : ""}
+      <div class="project-hero"><img src="${project.images[0]}" alt="${heroAlt} still 1"></div>
       <section class="project-gallery" aria-label="Project stills">
-        ${project.images.slice(1).map((image, i) => `<figure><img src="${image}" alt="${project.title} still ${i + 2}" loading="lazy"></figure>`).join("")}
+        ${project.images.slice(1).map((image, i) => `<figure><img src="${image}" alt="${heroAlt} still ${i + 2}" loading="lazy"></figure>`).join("")}
       </section>
       <div class="watch-row">
         <a class="watch-button" href="${project.youtube}" target="_blank" rel="noopener"><span class="watch-icon"></span> WATCH ON YOUTUBE</a>

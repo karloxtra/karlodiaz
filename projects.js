@@ -1,5 +1,24 @@
 window.PROJECTS = [
   {
+    id: "poise",
+    title: "P O I S E",
+    artist: "",
+    category: "SHORT FILM",
+    year: "2026",
+    roles: ["DIRECTOR", "EDITOR"],
+    camera: ["CANON EOS R50 MIRRORLESS", "RF-S 18-45MM F/4.5-6.3 IS STM"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS"],
+    starring: ["STEVEN CAMARGO"],
+    format: ["ONE TAKE"],
+    description: "A young man prepares for a night out with unsettling precision. Even when no one is watching, he maintains perfect composure, giving his ordinary routine an off-putting, villainous edge. Where he is going, and what he intends to do, remains unknown.",
+    youtube: "https://www.youtube.com/watch?v=Eezc7yZm6Ak&feature=youtu.be",
+    images: [
+      "projects/poise/hero.png",
+      "projects/poise/gallery2.png",
+      "projects/poise/gallery3.png"
+    ]
+  },
+  {
     id: "dogs-n-da-dark",
     title: "DOGS N DA DARK",
     artist: "KILLCRAWDAD",
