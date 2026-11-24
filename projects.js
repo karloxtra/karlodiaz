@@ -1,5 +1,29 @@
 window.PROJECTS = [
   {
+    id: "friday-night",
+    title: "FRIDAY NIGHT WITH KILL CRAWDAD",
+    artist: "KILLCRAWDAD",
+    category: "DOCUMENTARY",
+    year: "2026",
+    roles: ["DIRECTOR", "EDITOR"],
+    camera: ["CANON EOS R50 MIRRORLESS", "RF-S 18-45MM F/4.5-6.3 IS STM", "DJI RS GIMBAL STABILIZER", "EF-S 10-18MM F/4.5-5.6 IS STM"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS", "BLENDER"],
+    youtube: "https://www.youtube.com/watch?v=F3Phck7KKhs",
+    images: ["projects/fridaynight/friday1.png", "projects/fridaynight/friday2.png", "projects/fridaynight/friday3.png"]
+  },
+  {
+    id: "iphone-storage",
+    title: "IPHONE STORAGE",
+    artist: "KILLCRAWDAD",
+    category: "MUSIC VIDEO",
+    year: "2026",
+    roles: ["DIRECTOR", "EDITOR"],
+    camera: ["CANON EOS R50 MIRRORLESS", "RF-S 18-45MM F/4.5-6.3 IS STM", "DJI RS GIMBAL STABILIZER", "EF-S 10-18MM F/4.5-5.6 IS STM"],
+    software: ["PREMIERE PRO", "AFTER EFFECTS", "BLENDER"],
+    youtube: "https://www.youtube.com/watch?v=2-VDoGL4yBk",
+    images: ["projects/iphonestorage/iphonestorage1.png", "projects/iphonestorage/iphonestorage2.png", "projects/iphonestorage/iphonestorage3.png"]
+  },
+  {
     id: "poise",
     title: "P O I S E",
     artist: "",

@@ -3,6 +3,15 @@
 
   const transition = document.querySelector(".page-transition");
 
+  // Mobile Safari and desktop browsers can restore a page from back/forward cache.
+  // Never leave a previous navigation wipe covering the restored page.
+  window.addEventListener("pageshow", () => {
+    if (!transition) return;
+    transition.classList.remove("is-entering", "is-leaving");
+    transition.style.transform = "translateY(100%)";
+    requestAnimationFrame(() => { transition.style.transform = ""; });
+  });
+
   function animateTo(url, label = "") {
     if (!transition) {
       window.location.href = url;
@@ -208,9 +217,9 @@
     const navButtons = [...document.querySelectorAll("[data-section]")];
 
     function showSection(id, updateHash = true) {
-      sections.forEach(section => section.classList.toggle("is-active", section.id === id));
-      document.querySelectorAll(".nav-link").forEach(link => link.classList.toggle("is-active", link.dataset.section === id));
-      window.scrollTo({ top: 0, behavior: "instant" });
+      const section = document.getElementById(id);
+      if (!section) return;
+      section.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
       if (updateHash) history.replaceState(null, "", `#${id}`);
     }
 
@@ -218,8 +227,19 @@
       button.addEventListener("click", () => showSection(button.dataset.section));
     });
 
+    // Update the active navigation item as the visitor scrolls.
+    const updateActiveNav = () => {
+      const position = window.scrollY + window.innerHeight * .38;
+      let active = "about";
+      for (const section of sections) if (section.offsetTop <= position) active = section.id;
+      document.querySelectorAll(".nav-link").forEach(link => link.classList.toggle("is-active", link.dataset.section === active));
+    };
+    window.addEventListener("scroll", updateActiveNav, { passive: true });
+    updateActiveNav();
     const start = location.hash.replace("#", "");
-    if (["about", "works", "contact"].includes(start)) showSection(start, false);
+    if (["about", "works", "contact"].includes(start)) {
+      requestAnimationFrame(() => document.getElementById(start)?.scrollIntoView({ behavior: "instant" }));
+    }
     setupIntro();
   }
 

@@ -102,3 +102,13 @@ body.short-player-open{overflow:hidden}
 @media(max-width:900px){.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.short-player-panel{grid-template-columns:1fr}.short-player-copy{padding:28px}.short-player-media video{max-height:62vh}.project-intro{grid-template-columns:1fr}.project-specs{margin-top:18px}.project-description{grid-template-columns:1fr;gap:16px;margin-bottom:42px}.project-gallery figure:nth-child(n){width:100%}}
 @media(max-width:620px){:root{--header:70px}.work-tabs{gap:16px}.work-tab{font-size:10px}.short-card.is-vertical .short-thumb{width:72%}.short-play{opacity:1;width:48px;height:48px}.short-player{padding:0}.short-player-panel{width:100%;max-height:100vh;height:100vh;border:0}.short-player-copy{padding:24px 18px 34px}.short-player-media video{max-height:64vh}.site-header{padding:0 18px}.brand-link img{width:32px;height:32px}.main-nav{gap:14px}.nav-link{font-size:9px}.page-section{padding-left:18px;padding-right:18px}.about-lockup h1{font-size:34px}.education{font-size:10px;margin-top:38px}.projects-grid{grid-template-columns:1fr;gap:34px}.project-thumb{aspect-ratio:16/10}.section-heading{margin-top:5px}.contact-inner h2{font-size:58px}.project-root{padding-left:18px;padding-right:18px}.project-title-group h1{font-size:43px}.project-specs{grid-template-columns:1fr;gap:17px}.project-gallery{margin:55px auto;gap:24px}.project-pagination{grid-template-columns:1fr}.project-nav-button{min-height:150px;padding:28px 18px}.project-nav-button.next{border-left:0;border-top:1px solid var(--line)}.intro video{object-fit:contain}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* November update: continuous scrolling from About into Works and Contact. */
+.home-page .page-section,
+.home-page .page-section:not(.is-active),
+.home-page .works-section:not(.is-active){display:flex!important;animation:none!important}
+.home-page .works-section{display:block!important}
+.home-page .page-section{scroll-margin-top:var(--header)}
+.home-page .about-section{min-height:100svh}
+.home-page .works-section{min-height:60vh}
+.home-page .contact-section{min-height:100svh}
