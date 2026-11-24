@@ -112,3 +112,35 @@ body.short-player-open{overflow:hidden}
 .home-page .about-section{min-height:100svh}
 .home-page .works-section{min-height:60vh}
 .home-page .contact-section{min-height:100svh}
+
+/* Layout correction: keep the continuous scroll, but prevent Works from
+   inheriting the flex layout used by the About and Contact sections. */
+.home-page #about,
+.home-page #contact {
+  display: flex !important;
+  width: 100%;
+}
+.home-page #works,
+.home-page #works:not(.is-active) {
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+}
+.home-page #works .section-heading,
+.home-page #works .projects-grid {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-page #works .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .home-page #works .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .home-page #works .projects-grid { grid-template-columns: minmax(0, 1fr); }
+}
