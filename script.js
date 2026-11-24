@@ -30,31 +30,14 @@
     setTimeout(() => transition.classList.remove("is-leaving"), 800);
   }
 
-  function setupIntro() {
-    const intro = document.getElementById("intro");
-    const video = document.getElementById("intro-video");
-    if (!intro || !video) return;
-
-    if (sessionStorage.getItem("introPlayed")) {
-      intro.remove();
-      return;
-    }
-
-    sessionStorage.setItem("introPlayed", "true");
-    video.src = window.matchMedia("(max-width: 768px)").matches
-      ? "LOGOINTROPHONE.mp4"
-      : "LOGOINTROMP4.mp4";
-
-    const remove = () => {
-      intro.classList.add("is-hidden");
-      setTimeout(() => intro.remove(), 850);
-    };
-
-    video.addEventListener("ended", remove, { once: true });
-    video.addEventListener("error", remove, { once: true });
-    const playPromise = video.play();
-    if (playPromise) playPromise.catch(remove);
-    setTimeout(remove, 7000);
+  // Corner logo loops the original MP4 forward. A true forward/reverse loop
+  // requires a separately exported ping-pong MP4 (see README).
+  function setupBrandVideo() {
+    document.querySelectorAll(".brand-video").forEach(video => {
+      const fallback = video.parentElement.querySelector(".brand-fallback");
+      video.addEventListener("error", () => { video.style.display = "none"; if (fallback) fallback.style.display = "block"; });
+      video.play().catch(() => { video.style.display = "none"; if (fallback) fallback.style.display = "block"; });
+    });
   }
 
   function setupHome() {
@@ -240,7 +223,7 @@
     if (["about", "works", "contact"].includes(start)) {
       requestAnimationFrame(() => document.getElementById(start)?.scrollIntoView({ behavior: "instant" }));
     }
-    setupIntro();
+    setupBrandVideo();
   }
 
   function setupProject() {
@@ -307,6 +290,6 @@
     revealPage();
   }
 
-  if (document.body.classList.contains("project-page")) setupProject();
+  if (document.body.classList.contains("project-page")) { setupBrandVideo(); setupProject(); }
   else setupHome();
 })();
